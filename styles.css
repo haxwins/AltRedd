@@ -7,6 +7,8 @@
 	
 	color 1 dark: #0066B3
 	color 2 light: #BFE3FE
+	
+	border: 1px solid white;
 */
 body {
     background-color: #00477D;
@@ -19,6 +21,12 @@ body {
 .logo{
 	font-family: Open Sans;
 	font-size: 90px;
+}
+.alpha{
+	padding-left:89%;
+	margin-top: -20px;
+	font-family: Open Sans;
+	font-size: 11px;
 }
 .search{
 	background-color:#0066B3;

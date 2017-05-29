@@ -1,4 +1,6 @@
-var url = prompt("");
+
+var url="videos";
+//var url = prompt("");
 url = "https://www.reddit.com/r/" + url + ".json";
 console.log(url);
 
