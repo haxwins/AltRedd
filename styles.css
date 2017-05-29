@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
+/*
+	bg:#00477D;
+	
+	color 1 dark: #0066B3
+	color 2 light: #BFE3FE
+*/
+body {
+    background-color: #00477D;
+}
+.main{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.logo{
+	font-family: Open Sans;
+	font-size: 90px;
+}
+.search{
+	background-color:#0066B3;
+	border-radius: 0px 0px 7px 7px;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	margin-top:-8px;
+	width:70%;
+	height:250px;
+	color:#BFE3FE;
+	}
+/*================================================================*/
+.searchbar{
+	height:40px;
+	color:white;
+	margin-top:40px;
+	width:80%;
+	display: flex;
+	flex-direction: row;
+}
+	.searchbar input{
+		display: inline-block;
+		border: 0px;
+		background-color:#BFE3FE;
+		font-family: Open Sans;
+		padding-left:10px;
+		border-radius: 7px 0px 0px 7px;
+		height:95%;
+		width:80%;
+		font-size: 15px;
+		color: #0066B3;
+	}
+	.searchbar div{
+		display: inline-block;
+		width:20%;
+		height:100%;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 240%; 
+		align-self:center;
+		font-family: Open Sans;
+		font-size:16px;
+		background-color:#BFE3FE;
+		color:#0066B3;
+		border-radius: 0px 7px 7px 0px;
+		cursor: pointer;
+	}
+	.searchbar div:hover{
+		background-color:#80C8FE;
+	}
+/*================================================================*/
+
+
