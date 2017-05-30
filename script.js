@@ -4,7 +4,7 @@ var url="videos";
 url = "https://www.reddit.com/r/" + url + ".json";
 console.log(url);
 
-function jsonLoad(url){
+function jsonLoad(url,callback){
 	var req = new XMLHttpRequest();
 	console.log(req.onreadystatechange);
 	console.log(req.readyState);
@@ -12,10 +12,8 @@ function jsonLoad(url){
 	req.addEventListener("load", () => {
 		console.log(req.status);
 		if(req.status == 200 && req.readyState == 4){
-			var file = JSON.parse(req.responseText);
-			console.log(file);
-			setBoard(file);
-			return s;
+			console.log(JSON.parse(req.responseText));
+			callback(JSON.parse(req.responseText));
 		}
 		else{
 			console.log("errr");
@@ -23,11 +21,11 @@ function jsonLoad(url){
 	});
 	req.send(null);
 }
-function setBoard(file){
+function setboard(file){
 	console.log(file);
 	console.log("lmao");
 	file = file.data.children;
 	console.log(file);
 }
-jsonLoad(url);
+jsonLoad(url,setboard);
 	
