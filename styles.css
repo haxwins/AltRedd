@@ -39,8 +39,8 @@ body {
 	border-radius: 0px 0px 7px 7px;
 	margin-top:-8px;
 	width:70%;
-	height:250px;
 	color:#BFE3FE;
+	margin-bottom:50px;
 	}
 /*================================================================*/
 .searchbar{
@@ -82,5 +82,16 @@ body {
 		background-color:#80C8FE;
 	}
 /*================================================================*/
-
+.posts{
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	width:70%;
+	height:700px;/*do wyjebania*/
+	background-color:#0066B3;
+	border-radius: 7px 7px 0px 0px;
+	margin-top:-8px;
+	width:70%;
+	color:#BFE3FE;
+	}
 
