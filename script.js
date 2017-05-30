@@ -8,9 +8,9 @@ function jsonLoad(url,callback){
 	var req = new XMLHttpRequest();
 	console.log(req.onreadystatechange);
 	console.log(req.readyState);
+	console.log(req.status);
 	req.open("GET", url, true);
 	req.addEventListener("load", () => {
-		console.log(req.status);
 		if(req.status == 200 && req.readyState == 4){
 			console.log(JSON.parse(req.responseText));
 			callback(JSON.parse(req.responseText));
