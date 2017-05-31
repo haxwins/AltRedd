@@ -13,7 +13,7 @@
 body {
     background-color: #00477D;
 }
-.main{
+#main{
 	display: flex;
 	align-items: center;
 	flex-direction: column;

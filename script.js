@@ -1,3 +1,4 @@
+var firstTime = true;
 function jsonLoad(url,callback){		//getting json file from reddit
 	var req = new XMLHttpRequest();
 	req.open("GET", url, true);
@@ -21,13 +22,16 @@ function setboard(file){				//prepering and sending posts to site
 	document.getElementById("posts").innerHTML = newArr;
 	fadeIn('posts');
 }
-function goButton(){					//taking text from search bar after clicking 'go'
-	document.getElementById("posts").style.opacity = 0.1;
-	//document.getElementById("logo").style.display = "none";
-	document.getElementById("logo").style.fontSize = "15px";
+function goButton(){					//taking text from search bar after clicking 'go', changing styles of elements on top
+	document.getElementById("posts").style.opacity = 0;
+	if(firstTime)
+		lowerFont('logo');
+	firstTime=false;
+	document.getElementById("logo").style.marginTop = "5px";
 	document.getElementById("searchbar").style.paddingTop = "10px";
 	document.getElementById("searchbar").style.paddingBottom = "30px";
 	document.getElementById("alpha").style.display = "none";
+	
 	var url = document.getElementById("search").value;
 	url = "https://www.reddit.com/r/" + url + ".json";
 	jsonLoad(url,setboard);
@@ -38,7 +42,7 @@ function keyPress(e){					//triggering goButton() after Enter key press
 		goButton();
 	}
 }
-function fadeIn(s){						//fade in function, opacity from 0.1 to 1. Argument by ID
+function fadeIn(s){						//fade in function, opacity from 0.1 to 1. Argument by ID					TO CHANGE
 	setTimeout(()=>{document.getElementById(s).style.opacity = 0.1;}, 100);
 	setTimeout(()=>{document.getElementById(s).style.opacity = 0.2;}, 150);
 	setTimeout(()=>{document.getElementById(s).style.opacity = 0.3;}, 200);
@@ -50,7 +54,23 @@ function fadeIn(s){						//fade in function, opacity from 0.1 to 1. Argument by 
 	setTimeout(()=>{document.getElementById(s).style.opacity = 0.9;}, 600);
 	setTimeout(()=>{document.getElementById(s).style.opacity = 1;}, 650);
 }
-
+function lowerFont(s){					//animate logo text 							TO CHANGE
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "85px";}, 100);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "80px";}, 150);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "75px";}, 200);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "70px";}, 250);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "65px";}, 300);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "60px";}, 450);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "55px";}, 500);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "50px";}, 550);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "45px";}, 600);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "40px";}, 650);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "35px";}, 700);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "30px";}, 750);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "25px";}, 800);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "20px";}, 850);
+	setTimeout(()=>{document.getElementById(s).style.fontSize = "15px";}, 900);
+}
 
 
 
