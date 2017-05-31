@@ -35,7 +35,7 @@ body {
 	margin-top:-8px;
 	width:70%;
 	height:250px;
-	background-color:#0066B3;
+	background-color: rgba(0, 102, 179, 1);
 	border-radius: 0px 0px 7px 7px;
 	margin-top:-8px;
 	width:70%;
@@ -82,10 +82,9 @@ body {
 		background-color:#80C8FE;
 	}
 /*================================================================*/
-.posts{
+#posts{
 	display: flex;
 	flex-direction:column;
-	align-items: center;
 	width:70%;
 	height:700px;/*do wyjebania*/
 	background-color:#0066B3;

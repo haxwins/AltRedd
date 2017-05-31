@@ -1,9 +1,3 @@
-
-var url="videos";
-//var url = prompt("");
-url = "https://www.reddit.com/r/" + url + ".json";
-console.log(url);
-
 function jsonLoad(url,callback){
 	var req = new XMLHttpRequest();
 	console.log(req.onreadystatechange);
@@ -22,10 +16,23 @@ function jsonLoad(url,callback){
 	req.send(null);
 }
 function setboard(file){
-	console.log(file);
-	console.log("lmao");
 	file = file.data.children;
-	console.log(file);
+	newArr = file.map(convert);
+	function convert(v){
+		v=v.data;
+		return '<div><img src="' + v.thumbnail + '"></img>' + v.title + '</div>';
+	}
+	console.log(newArr[0]);
+	//var end = '<div><img src="' + obj.thumbnail + '"></img>' + '<p>' + obj.title + '</p></div>';
+	//console.log(end);
+	document.getElementById("posts").innerHTML = newArr;
 }
-jsonLoad(url,setboard);
-	
+function goButton(){
+	console.log('lmaasd');
+	var url = document.getElementById("search").value;
+	console.log(url);
+	url = "https://www.reddit.com/r/" + url + ".json";
+	console.log(url);
+	//document.getElementsByClassName("alpha").style.color = "blue";
+	jsonLoad(url,setboard);
+}
