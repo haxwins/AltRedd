@@ -27,7 +27,12 @@ function goButton(){					//taking text from search bar after clicking 'go'
 	url = "https://www.reddit.com/r/" + url + ".json";
 	jsonLoad(url,setboard);
 }
-
+function keyPress(e){					//triggering goButton() after Enter key press
+	console.log(e);
+	if(e.keyCode == 13){
+		goButton();
+	}
+}
 function fadeIn(s){						//fade in function, opacity from 0.1 to 1. Argument by ID
 	setTimeout(()=>{document.getElementById(s).style.opacity = 0.1;}, 100);
 	setTimeout(()=>{document.getElementById(s).style.opacity = 0.2;}, 150);
