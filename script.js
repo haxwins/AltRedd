@@ -23,6 +23,11 @@ function setboard(file){				//prepering and sending posts to site
 }
 function goButton(){					//taking text from search bar after clicking 'go'
 	document.getElementById("posts").style.opacity = 0.1;
+	//document.getElementById("logo").style.display = "none";
+	document.getElementById("logo").style.fontSize = "15px";
+	document.getElementById("searchbar").style.paddingTop = "10px";
+	document.getElementById("searchbar").style.paddingBottom = "30px";
+	document.getElementById("alpha").style.display = "none";
 	var url = document.getElementById("search").value;
 	url = "https://www.reddit.com/r/" + url + ".json";
 	jsonLoad(url,setboard);
