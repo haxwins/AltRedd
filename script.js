@@ -1,12 +1,8 @@
-function jsonLoad(url,callback){
+function jsonLoad(url,callback){		//getting json file from reddit
 	var req = new XMLHttpRequest();
-	console.log(req.onreadystatechange);
-	console.log(req.readyState);
-	console.log(req.status);
 	req.open("GET", url, true);
 	req.addEventListener("load", () => {
 		if(req.status == 200 && req.readyState == 4){
-			console.log(JSON.parse(req.responseText));
 			callback(JSON.parse(req.responseText));
 		}
 		else{
@@ -15,24 +11,36 @@ function jsonLoad(url,callback){
 	});
 	req.send(null);
 }
-function setboard(file){
+function setboard(file){				//prepering and sending posts to site
 	file = file.data.children;
 	newArr = file.map(convert);
 	function convert(v){
 		v=v.data;
 		return '<div><img src="' + v.thumbnail + '"></img>' + v.title + '</div>';
 	}
-	console.log(newArr[0]);
-	//var end = '<div><img src="' + obj.thumbnail + '"></img>' + '<p>' + obj.title + '</p></div>';
-	//console.log(end);
 	document.getElementById("posts").innerHTML = newArr;
+	fadeIn('posts');
 }
-function goButton(){
-	console.log('lmaasd');
+function goButton(){					//taking text from search bar after clicking 'go'
+	document.getElementById("posts").style.opacity = 0.1;
 	var url = document.getElementById("search").value;
-	console.log(url);
 	url = "https://www.reddit.com/r/" + url + ".json";
-	console.log(url);
-	//document.getElementsByClassName("alpha").style.color = "blue";
 	jsonLoad(url,setboard);
 }
+
+function fadeIn(s){						//fade in function, opacity from 0.1 to 1. Argument by ID
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.1;}, 100);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.2;}, 150);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.3;}, 200);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.4;}, 250);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.5;}, 300);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.6;}, 450);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.7;}, 500);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.8;}, 550);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 0.9;}, 600);
+	setTimeout(()=>{document.getElementById(s).style.opacity = 1;}, 650);
+}
+
+
+
+
