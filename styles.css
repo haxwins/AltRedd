@@ -86,11 +86,13 @@ body {
 	display: flex;
 	flex-direction:column;
 	width:70%;
-	height:700px;/*do wyjebania*/
+	height:100%;/*do wyjebania*/
 	background-color:#0066B3;
 	border-radius: 7px 7px 0px 0px;
 	margin-top:-8px;
 	width:70%;
 	color:#BFE3FE;
 	}
-
+#posts div{
+	padding: 50px;
+}
