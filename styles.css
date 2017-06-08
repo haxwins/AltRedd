@@ -87,15 +87,13 @@ body {
 	flex-direction:column;
 	width:70%;
 	background-color:#0066B3;
-	opacity: 0;
+	opacity: 1;						/*switch between 1 and 0 to test posts section*/
 	border-radius: 7px 7px 0px 0px;
 	margin-top:-8px;
 	width:70%;
 	color:#BFE3FE;
 	}
-#posts div{
-}
-	#post{
+	#posts #post{
 		margin:10px;
 		padding: 7px;
 		display: flex;
@@ -104,20 +102,48 @@ body {
 		color: white;
 		background-color:rgba(191, 227, 254, 0.21);
 	}
-		img{
-			height:100px;
-			width:100px;
+/*SCORE==========================================================*/
+		#post #score{
+			position: relative;
+			height:105px;
+			width:140px;
+			min-width:140px;
 		}
-		#info{
+			#score img{
+				height:105px;
+				width:140px;
+				min-width:140px;
+			}
+			#score div{
+				background-color:rgba(0, 0, 0, 0);
+				position: absolute; 
+				top:0px;			
+				left: 0px;
+				width:100%;
+				max-width:140px;
+				height:100%;
+				font-size: 17px;
+				vertical-align: middle;
+				line-height: 190px;
+				font-family: Open Sans;
+				color:rgba(255, 255, 255, 0.8);
+			}
+			
+/*INFO==========================================================*/
+		#post #info{
+			display:flex;
+			flex-direction:column;
+			justify-content:space-around;
+			font-family: Open Sans;
 			padding-left:20px;
 			width:100%;
 		}
-			#title{
+			#info #title{
 				color:#BFE3FE;
-				font-size:25px;
+				font-size:16px;
 				margin-bottom:20px;
 			}
-			#more{
+			#info #more{
 				color:#BFE3FE;
-				font-size:15px;
+				font-size:10px;
 			}

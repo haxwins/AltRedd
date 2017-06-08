@@ -17,10 +17,14 @@ function setboard(file){				//prepering and sending posts to site
 	newArr = file.map(convert);
 	function convert(v){
 		v=v.data;
-		var temp='<div id="post">';
-		if(v.thumbnail==="")			//checks if there is a thumbnail image
-			v.thumbnail="tumb.png";
-		temp=temp + '<img src="' + v.thumbnail + '"></img>' + '<div id="info"><div id="title">' + v.title + '</div><div id="more">score: ' + v.score +  '	comments: ' + v.num_comments + '</div></div></div>';
+		var temp='<div id="post"><div id="score">';
+		if(v.thumbnail!=="" && v.thumbnail!="self" && v.thumbnail!="nsfw"){			//checks if there is a thumbnail image
+			temp=temp + '<img src="' + v.thumbnail + '"></img><div>' + v.score + '</div></div>'
+		}
+		else{
+			temp=temp + '<div style="line-height: 100px; text-align:center;">' + v.score + '</div></div>'
+		}
+		temp=temp+ '<div id="info"><div id="title">' + v.title + '</div><div id="more">comments: ' + v.num_comments +  '</div></div></div>';
 		console.log(temp);
 		return temp;
 	}
