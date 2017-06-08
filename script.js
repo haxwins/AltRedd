@@ -17,7 +17,12 @@ function setboard(file){				//prepering and sending posts to site
 	newArr = file.map(convert);
 	function convert(v){
 		v=v.data;
-		return '<div id="post"><img src="' + v.thumbnail + '"></img>' + v.title + '</div>';
+		var temp='<div id="post">';
+		if(v.thumbnail==="")			//checks if there is a thumbnail image
+			v.thumbnail="tumb.png";
+		temp=temp + '<img src="' + v.thumbnail + '"></img>' + '<div id="info"><div id="title">' + v.title + '</div><div id="more">score: ' + v.score +  '	comments: ' + v.num_comments + '</div></div></div>';
+		console.log(temp);
+		return temp;
 	}
 	var posts = newArr.join('');
 	document.getElementById("posts").innerHTML = posts;

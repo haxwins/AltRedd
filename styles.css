@@ -94,11 +94,30 @@ body {
 	color:#BFE3FE;
 	}
 #posts div{
-	padding: 50px;
 }
 	#post{
+		margin:10px;
+		padding: 7px;
 		display: flex;
 		flex-direction: row;
-		color: red;
-		
+		border-radius:7px;
+		color: white;
+		background-color:rgba(191, 227, 254, 0.21);
 	}
+		img{
+			height:100px;
+			width:100px;
+		}
+		#info{
+			padding-left:20px;
+			width:100%;
+		}
+			#title{
+				color:#BFE3FE;
+				font-size:25px;
+				margin-bottom:20px;
+			}
+			#more{
+				color:#BFE3FE;
+				font-size:15px;
+			}
