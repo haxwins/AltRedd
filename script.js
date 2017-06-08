@@ -17,9 +17,10 @@ function setboard(file){				//prepering and sending posts to site
 	newArr = file.map(convert);
 	function convert(v){
 		v=v.data;
-		return '<div><img src="' + v.thumbnail + '"></img>' + v.title + '</div>';
+		return '<div id="post"><img src="' + v.thumbnail + '"></img>' + v.title + '</div>';
 	}
-	document.getElementById("posts").innerHTML = newArr;
+	var posts = newArr.join('');
+	document.getElementById("posts").innerHTML = posts;
 	fadeIn('posts');
 }
 function goButton(){					//taking text from search bar after clicking 'go', changing styles of elements on top
